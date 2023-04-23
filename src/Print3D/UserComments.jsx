@@ -1,10 +1,10 @@
 import React from "react";
 
-function UserComments(comments) {
+function UserComments({comments}) {
   return (
     <React.Fragment>
       <ul>
-        {comments.map(({id, author, text}) => (
+        {comments && comments.map(({id, author, text}) => (
           <li key={id}>
             <p>{author}</p>
             <p>{text}</p>
