@@ -6,7 +6,7 @@ function UserComments({comments}) {
       <ul>
         {comments && comments.map(({id, author, text}) => (
           <li key={id}>
-            <p>{author}</p>
+            <p style={{fontWeight: '700'}}>{author}</p>
             <p>{text}</p>
           </li>
         ))}

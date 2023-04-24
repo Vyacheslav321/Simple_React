@@ -3,13 +3,21 @@ import Article from "./Article";
 import Gallery from "./Gallery";
 import FullPrice from "./FullPrice";
 import Counter from "./Counter";
+import Popularity from "./Popularity";
 import Description from "./Description";
 import UserComments from "./UserComments";
 import product from "./product";
 
 export default function Print3D() {
   return (
-    <section style={{ border: "1px solid red" }}>
+    <section
+      style={{
+        margin: "auto",
+        padding: "10px",
+        maxWidth: "450px",
+        border: "1px solid red",
+      }}
+    >
       <Title>{product.name}</Title>
       <Article>{product.code}</Article>
       <div
@@ -48,10 +56,12 @@ export default function Print3D() {
           <button style={{ minWidth: "120px" }} type="button">
             Купить
           </button>
-          <UserComments comments={product.comments} />
+          <Popularity count={product.comments.length} />
         </div>
       </div>
       <Description>{product.description}</Description>
+      <h3>Комментарии</h3>
+      <UserComments comments={product.comments} />
     </section>
   );
 }
